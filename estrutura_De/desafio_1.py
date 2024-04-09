@@ -14,16 +14,13 @@ re = 0 #Inicializando a variável r para controle de inserção de elementos no 
 frente = 0 #Inicializando a variável f para controle de remoção de elementos no array (f = frente)
 
 
-#FUNÇÃO PARA INSERIR NOVO ELEMENTO:
-
-# Função para primeiro verificar as condições, antes de inserir um novo elemento.
+# FUNÇÃO PARA INSERIR NOVO ELEMENTO:
+# Primeiro verificar as condições, antes de inserir um novo elemento.
 def inserir(elemento): 
     global re
     global frente
 
-    #((f == 0 or f == 1) and r == TAMANHO) or ((r+1) == f)
-
-    #Verificando se tem 2 ou mais espaços vazios para circular, e a ré voltar a posição 0 
+    # Verificando se tem 2 ou mais espaços vazios para circular, e a ré voltar a posição 0 
     espaco = 0
     for i in range(tam_array):
         if array[i] == None:
@@ -32,17 +29,18 @@ def inserir(elemento):
         if espaco >= 2 and re == tam_array:
             re = 0
 
-    #Condição de fila vazia 
+    # Condição de fila vazia 
     #if re == frente: 
         #re = 0
         #frente = 0
 
-    # #Condição para sinalizar um falso overflow, não insere
+    # Condição para sinalizar um falso overflow, e não inserir.
     if re + 1 == frente or (re == tam_array and espaco == 1): 
-        print(f'\nFalso Overflow!') 
+        print(f'\n--> Falso Overflow! <--\n') 
+
     #Condição de fila cheia
     elif re == tam_array: 
-            print(f'\nFila cheia = OVERFLOW\n')
+            print(f'\nFila cheia --> OVERFLOW\n')
 
     #Condição para inserir o elemento
     elif re + 1 != frente:
@@ -58,7 +56,7 @@ def remover():
     global re
     
     if re == frente:
-        print('\nFila vazia = UNDERFLOW\n')
+        print('\nFila vazia --> UNDERFLOW\n')
 
     else:
         if frente + 1 > tam_array:
@@ -74,11 +72,11 @@ def remover():
 
 # FUNÇÃO PARA ENCONTRAR UM ELEMENTO NO ARRAY:
 def encontrar(array, elemento):
-    procura = True #procura vai ser true até ser encontrada no array
+    procura = True #Procura vai ser true até ser encontrada no array
     for i in range(tam_array):
         if array[i] == elemento:
             procura = False
-            print(f"\nO {elemento} está no índice {i} do array!")
+            print(f"\nO {elemento} está no índice {i} do array!\n")
         
     if procura:
         print("\nO elemento não está no ARRAY!\n") 
