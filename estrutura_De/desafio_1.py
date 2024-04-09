@@ -57,7 +57,6 @@ def remover():
     global frente
     global re
     
-    
     if re == frente:
         print('\nFila vazia = UNDERFLOW\n')
 
@@ -85,7 +84,7 @@ def encontrar(array, elemento):
         print("\nO elemento não está no ARRAY!\n") 
 
 
-#Menu para o usuário escolher o que ele quer verificar:
+# MENU PARA O USUÁRIO ESCOLHER O QUE ELE QUER VERIFICAR:
 while True:
     opcao = int(input('Menu:\n0- SAIR\n1- Inserir novo elemento\n2- Remover elemento\n3- Exibir elemento\n4- Encontrar elemento\n\nEscolha uma das opções acima: '))
 
